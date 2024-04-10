@@ -12,21 +12,21 @@ class Junior extends Funcionario
     public function getHorasTrabalhadas(){
         return $this->horasTrabalhadas;
     }
-    public function setHorasTrabalhadas(){
+    public function setHorasTrabalhadas($horasTrabalhadas){
         $this->horasTrabalhadas = $horasTrabalhadas;
     }
 
 
-    public function aumentarSalario() {
+    public function aumentarSalario($salario) {
         if($this->horasTrabalhadas>80){
-            return parent::aumentarSalario();
+            return parent::aumentarSalario($salario);
         } else {
             return "Não recebeu aumento";
         }
         
     }
 
-    public function __construct($horasTrabalhadas){
+    public function __construct($nome,$salario,$numInscricao,$horasTrabalhadas){
         parent::__construct($nome,$salario,$numInscricao);
         $this->setHorasTrabalhadas($horasTrabalhadas);
     }
